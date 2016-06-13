@@ -1,0 +1,21 @@
+= Reproducer of MASSEMBLY-809
+
+Assembly plugin requires precise dependency order when classifier is used.
+
+See https://issues.apache.org/jira/browse/MASSEMBLY-809
+
+== HOW TO
+
+* `mvn install`
+* `unzip -l assembly/target/project-assembly-0.0.1-SNAPSHOT-assembly-test-for-project-doc.zip`
+
+== WHAT IS HERE
+
+Folder `project` contains a `pom.xml` which generates a project jar file which contains a `java class` file.
+
+Then `maven-jar-plugin` is configured to create a additional jar file containing documentation represented
+by html file generated from Asciidoctor file (adoc) just before by asciidoctor maven plugin.
+
+Folder `assembly` then contains `pom.xml` which configures assembly plugin to create a `.zip` file which will
+contain both jar files created from `project`. It means a project jar file and project doc jar file.
+
