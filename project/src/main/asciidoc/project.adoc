@@ -1,0 +1,7 @@
+= Test document
+
+This is a sample documentation on the test project
+
+== Why
+
+A try to reproduce trouble of https://issues.apache.org/jira/browse/MASSEMBLY-809
